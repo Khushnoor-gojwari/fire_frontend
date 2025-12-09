@@ -87,7 +87,7 @@ export default function ImageDetect() {
 
       // Call the combined endpoint
       const response = await axios.post(
-        "http://localhost:8000/api/image/upload/combined",
+        "https://backend-fire-smoke.onrender.com/api/image/upload/combined",
         formData,
         { 
           headers: { 
