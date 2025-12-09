@@ -261,7 +261,7 @@ export default function LiveDetect() {
       canvas.height = videoRef.current.videoHeight;
 
       // Connect WebSocket
-      wsRef.current = new WebSocket("ws://localhost:8000/api/realtime/stream");
+      wsRef.current = new WebSocket("wss://backend-fire-smoke.onrender.com/api/realtime/stream");
 
       wsRef.current.onopen = () => {
         console.log("WebSocket connected");
