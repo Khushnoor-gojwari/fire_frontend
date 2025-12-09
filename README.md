@@ -1,11 +1,5 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
+# fire_frontend
+This is frontend for fire & smoke detection project.
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -68,3 +62,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+# fire_frontend
+>>>>>>> 38b5d1788e2870994b10db1370cb2c43030dcafc
