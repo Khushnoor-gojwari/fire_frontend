@@ -87,7 +87,7 @@ export default function VideoDetect() {
       formData.append("file", state.selectedFile);
 
       const response = await axios.post(
-        "http://localhost:8000/api/video/upload",
+        "https://backend-fire-smoke.onrender.com/api/video/upload",
         formData,
         {
           headers: {
@@ -114,7 +114,7 @@ export default function VideoDetect() {
   const startStatusPolling = (taskId) => {
     const interval = setInterval(async () => {
       try {
-        const statusRes = await axios.get(`http://localhost:8000/api/video/status/${taskId}`);
+        const statusRes = await axios.get(`https://backend-fire-smoke.onrender.com/api/video/status/${taskId}`);
         const data = statusRes.data;
         
         setState(prev => ({ 
@@ -129,7 +129,7 @@ export default function VideoDetect() {
           setState(prev => ({
             ...prev,
             status: "Processing completed!",
-            resultVideo: `http://localhost:8000/api/video/stream/${taskId}`,
+            resultVideo: `https://backend-fire-smoke.onrender.com/api/video/stream/${taskId}`,
             processedPreview: data.processed_preview || "",  // ADDED: Get processed preview
             fireDetected: data.fire_detected,
             smokeDetected: data.smoke_detected,
@@ -169,7 +169,7 @@ export default function VideoDetect() {
 
     try {
       // Start processing
-      await axios.post(`http://localhost:8000/api/video/process/${state.taskId}`);
+      await axios.post(`https://backend-fire-smoke.onrender.com/api/video/process/${state.taskId}`);
       
       // Start polling for status
       startStatusPolling(state.taskId);
