@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import ImageDetect from "./pages/ImageDetect";
+import VideoDetect from "./pages/VideoDetect";
+import LiveDetect from "./pages/LiveDetect";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <nav style={styles.nav}>
+        <Link style={styles.link} to="/">Home</Link>
+        <Link style={styles.link} to="/image">Image Detection</Link>
+        <Link style={styles.link} to="/video">Video Detection</Link>
+        <Link style={styles.link} to="/live">Live Detection</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/image" element={<ImageDetect />} />
+        <Route path="/video" element={<VideoDetect />} />
+        <Route path="/live" element={<LiveDetect />} />
+      </Routes>
+    </Router>
   );
 }
 
-export default App;
+const styles = {
+  nav: {
+    display: "flex",
+    gap: "20px",
+    padding: "15px",
+    background: "#222",
+  },
+  link: {
+    color: "white",
+    textDecoration: "none",
+    fontSize: "16px",
+  },
+};
